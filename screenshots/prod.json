@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Пламя Путника",
+      "hasCanvas": true,
+      "bodyTextLen": 256,
+      "bodyTextHash": "630bf2419e19f096d15fba3cac3c9c4d86ddf8c953d52589da72d7266c1797aa",
+      "bodyTextPrefix": "ЖИЗНЬ СИЛА ОСКОЛОК РУИНЫ И ЗАБРОШЕННЫЙ ЗАМОК Пламя Путника Он не",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/prod.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Пламя Путника",
+      "hasCanvas": true,
+      "bodyTextLen": 256,
+      "bodyTextHash": "630bf2419e19f096d15fba3cac3c9c4d86ddf8c953d52589da72d7266c1797aa",
+      "bodyTextPrefix": "ЖИЗНЬ СИЛА ОСКОЛОК РУИНЫ И ЗАБРОШЕННЫЙ ЗАМОК Пламя Путника Он не",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/prod-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/prod.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

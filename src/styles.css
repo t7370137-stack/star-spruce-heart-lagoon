@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0c0a0d;
+  --color-panel: #161218;
+  --color-fg: #efe6dc;
+  --color-muted: #9a9088;
+  --color-ember: #e07a3d;
+  --color-steel: #c5d0e0;
+  --color-blood: #8f2d3a;
+  --color-line: #3a322c;
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+}
+
+.stage {
+  position: relative;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--color-bg);
+  touch-action: none;
+}
+
+.stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hud {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: min(280px, 70vw);
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.track {
+  height: 8px;
+  background: #1c1714;
+  border: 1px solid var(--color-line);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  transform-origin: left center;
+}
+
+.fill-hp { background: var(--color-blood); }
+.fill-st { background: var(--color-ember); }
+.fill-mp { background: #4d6ea8; }
+
+.boss-wrap {
+  width: min(420px, 78vw);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.boss-name {
+  font-family: var(--font-display);
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--color-ember);
+  margin-bottom: 0.35rem;
+}
+
+.toast {
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: var(--color-fg);
+  text-shadow: 0 2px 12px #000;
+  font-size: 1.15rem;
+  max-width: 80vw;
+}
+
+.overlay {
+  pointer-events: auto;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: linear-gradient(to top, #0c0a0df2 8%, #0c0a0d66 55%, #0c0a0d22);
+  padding: 1.5rem;
+}
+
+.card {
+  width: min(520px, 100%);
+  margin-bottom: 6vh;
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-panel) 88%, transparent);
+  padding: 1.4rem 1.4rem 1.2rem;
+}
+
+.eyebrow {
+  color: var(--color-ember);
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin: 0.35rem 0 0.6rem;
+  line-height: 1.1;
+}
+
+.lede {
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.chip {
+  border: 1px solid var(--color-line);
+  color: var(--color-steel);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.45rem;
+}
+
+.play {
+  pointer-events: auto;
+  background: var(--color-ember);
+  color: #1a0e08;
+  border: 0;
+  font-family: var(--font-display);
+  letter-spacing: 0.16em;
+  padding: 0.85rem 1.2rem;
+  min-height: 48px;
+  font-size: 0.95rem;
+}
+
+.touch {
+  pointer-events: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.6rem;
+  display: none;
+  justify-content: space-between;
+  padding: 0 0.6rem;
+  gap: 0.5rem;
+}
+
+@media (pointer: coarse) {
+  .touch { display: flex; }
+  .hud { padding-bottom: 5.5rem; }
+}
+
+.pad, .acts {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.touch button {
+  min-width: 52px;
+  min-height: 52px;
+  background: #1c1714cc;
+  color: var(--color-fg);
+  border: 1px solid var(--color-line);
+  font-family: var(--font-display);
+}
